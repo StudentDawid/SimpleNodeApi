@@ -6,7 +6,8 @@ module.exports = function(app) {
   // chat Routes
   app.route('/chats')
     .get(chatCtrl.list_all_chats)
-    .post(chatCtrl.create_a_chat);
+    .post(chatCtrl.create_a_chat)
+    .delete(chatCtrl.delete_a_chat);
 
   // messages Router
   app.route('/chats/:chatId')

@@ -5,13 +5,15 @@ var express = require('express'),
   // Task = require('./api/models/todoListModel'), //created model loading here
   Chats = require('./api/chat/models/chatModel'),
   Messages = require('./api/chat/models/messageModel'),
-  bodyParser = require('body-parser');
+  bodyParser = require('body-parser'),
+  cors = require('cors');
   
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
 // mongoose.connect('mongodb://localhost/Tododb');
 mongoose.connect('mongodb://localhost/Chat');
 
+app.use(cors())
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
