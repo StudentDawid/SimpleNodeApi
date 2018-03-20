@@ -21,7 +21,7 @@ exports.create_a_message = function(req, res) {
 
 exports.delete_a_message = function(req, res) {
     Messages.remove({
-    _id: req.body.id
+    _id: req.query.id
   }, function(err, task) {
     if (err)
       res.send(err);

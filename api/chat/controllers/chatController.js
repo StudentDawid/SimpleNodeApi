@@ -21,7 +21,7 @@ exports.create_a_chat = function(req, res) {
 };
 
 exports.delete_a_chat = function(req, res) {
-  var id = req.body.id;
+  var id = req.query.id;
   Chats.remove({
     _id: id
   }, function(err, task) {
